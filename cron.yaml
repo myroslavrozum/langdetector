@@ -1,0 +1,5 @@
+cron:
+- description: Weekly train frequencies
+  url: /train
+  schedule: every sunday 23:00
+

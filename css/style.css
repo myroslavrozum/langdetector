@@ -1,0 +1,56 @@
+body {
+  font-family: Verdana, Helvetica, sans-serif;
+  font-size: 0.75em;
+  padding: 0px;
+  background-color: #eeeeee;
+}
+
+div {
+  display: inline-block;
+  vertical-align: top;
+}
+.container {
+  vertical-align: top;
+  padding: 0px;
+}
+
+.left {
+  width: 400px;
+  height: 100px;
+  position: relative;
+}
+
+#text {
+  margin-left: 20px;
+  background-transparent;
+  height: 100px;
+  width: 300px;
+}
+
+#detect_button {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  background-color: #cccccc; 
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80px;
+  height: 100px;
+}
+
+.lang {
+  display: block;
+  padding: 1px;
+}
+
+.log {
+  font-size: 0.65em;
+}
+
+.highlighted {
+  background-color: #cccccc;
+  border: 10px;
+  border-color: black;
+}

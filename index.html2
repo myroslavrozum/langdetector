@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <link rel=stylesheet type="text/css" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <script language='javascript' type='text/javascript'>
+        $(document).ready(function(){
+          $('#detect_button').click(function(){
+            $('#form').submit();
+          });
+          {% if detected_language %}
+          $('#langmarker_{{ detected_language }}').addClass('highlighted');
+          {% endif %}
+        });
+      </script>
+  </head>
+  <body>
+    URL, text... anything:<br>
+    <div class='container'>
+      <div class='left'>
+        <form id="form" action="/sign" method="post">
+          <textarea id="text" name="content" rows="3" cols="60"></textarea>
+          <div id="detect_button" value="Detect language">Detect Language</div>
+        </form>
+        {% if log %}
+          <div class='log'>{{ log }}</div>
+        {% endif %}
+      </div>
+      <div class='right'>
+        {% for language in supported_languages.iterkeys() %}
+          <span class='lang' id=langmarker_{{ language }}>{{ supported_languages[language] }}</span>
+        {% endfor %}
+        <a href='/train'>Train</a>
+      </div>
+    </div>
+  </body>
+<html>
